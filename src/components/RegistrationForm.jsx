@@ -1,6 +1,6 @@
 import React from 'react';
 import css from '../components/ContactForm.module.css';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import { register } from '../redux/auth/operations';
 import { useDispatch } from 'react-redux';

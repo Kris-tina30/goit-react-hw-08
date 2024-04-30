@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import ContactsPage from './pages/ContactsPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -25,7 +25,6 @@ function App() {
   if (isRefresging) return <div>...loading</div>;
   return (
     <Layout>
-      {/* <Suspense fallback={<Loader />}> */}
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
 
@@ -58,7 +57,6 @@ function App() {
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      {/* </Suspense> */}
     </Layout>
   );
 }
