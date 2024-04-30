@@ -20,7 +20,7 @@ const ContactsPage = () => {
   return (
     <div className={css.contactsPage}>
       <div>
-      <h2>New contact form</h2>
+        <h2>New contact form</h2>
         <ContactForm />
       </div>
       <div>

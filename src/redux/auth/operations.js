@@ -14,7 +14,6 @@ export const clearToken = () => (instance.defaults.headers.common.Authorization 
 export const register = createAsyncThunk('auth/register', async (formData, thunkAPI) => {
   try {
     const { data } = await instance.post('/users/signup', formData);
-    console.log('REGISTER data: ', data);
 
     setToken(data.token);
 
@@ -26,7 +25,6 @@ export const register = createAsyncThunk('auth/register', async (formData, thunk
 export const login = createAsyncThunk('auth/login', async (formData, thunkAPI) => {
   try {
     const { data } = await instance.post('/users/login', formData);
-    console.log('LOGIN data: ', data);
 
     setToken(data.token);
 
@@ -42,7 +40,6 @@ export const refreshUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) 
 
     setToken(token);
     const { data } = await instance.get('/users/current');
-    console.log('REFRESH data: ', data);
 
     return data;
   } catch (error) {
