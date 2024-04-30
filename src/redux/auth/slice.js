@@ -27,17 +27,16 @@ const slice = createSlice({
         state.isLogedIn = true;
       })
 
-      // .addCase(refreshUser.pending, state => {
-      //   state.isRefreshing = true;
-      // })
+      .addCase(refreshUser.pending, state => {
+        state.isRefreshing = true;
+      })
       .addCase(refreshUser.fulfilled, (state, action) => {
-       
         state.isLogedIn = true;
         state.user = action.payload;
       })
-      // .addCase(refreshUser.rejected, state => {
-      //   state.isRefreshing = false;
-      // })
+      .addCase(refreshUser.rejected, state => {
+        state.isRefreshing = false;
+      })
       .addCase(logout.fulfilled, state => {
         state.user = { name: null, email: null };
         state.token = null;

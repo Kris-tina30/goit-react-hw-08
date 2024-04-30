@@ -2,6 +2,7 @@ import React from 'react';
 import ContactList from '../components/ContactList';
 import SearchBox from '../components/SearchBox';
 import ContactForm from '../components/ContactForm';
+import css from './ContactsPage.module.css';
 
 import { useEffect } from 'react';
 import { fetchContacts } from '../redux/contacts/operations';
@@ -17,13 +18,18 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      {loading}
-      {error}
-      <ContactList />
+    <div className={css.contactsPage}>
+      <div>
+      <h2>New contact form</h2>
+        <ContactForm />
+      </div>
+      <div>
+        <SearchBox />
+        {loading}
+        {error}
+        <h2>Your phonebook</h2>
+        <ContactList />
+      </div>
     </div>
   );
 };

@@ -1,9 +1,8 @@
-
-
-
-
 header {
-
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
   min-height: 64px;
   margin: 12px 0px;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
@@ -11,14 +10,12 @@ header {
 }
 
 .nav {
+  padding: 0px 20px;
   display: flex;
-  align-items: baseline;
-  justify-content: flex-start;
-  gap: 20px;
 }
 .navLink {
   display: flex;
-  padding: 5px;
+  padding: 10px;
   font-size: 25px;
   color: black;
   text-decoration: none;
@@ -26,4 +23,16 @@ header {
 }
 .active {
   color: blueviolet;
+}
+.authNav {
+  display: flex;
+  gap: 15px;
+}
+.userMenu {
+  display: flex;
+}
+.logoutButton {
+  margin: 10px;
+
+  background-color: rgb(207, 178, 233);
 }

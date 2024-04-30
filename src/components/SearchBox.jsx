@@ -12,7 +12,7 @@ function SearchBox() {
 
   return (
     <div>
-      <p>Find contacts by name</p>
+      <h3>Find contacts by name</h3>
       <input type="text" value={filters} onChange={onChangeFilter} />
     </div>
   );

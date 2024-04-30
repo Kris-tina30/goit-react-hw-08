@@ -38,7 +38,8 @@ ol {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+  color: rgb(162, 126, 162);
+} 
 
 button {
   border-radius: 8px;
@@ -50,6 +51,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 0px 10px;
 }
 button:hover {
   border-color: #646cff;

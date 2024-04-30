@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
-  )
-}
+    <div>
+      <h1>Contacts manager welcome page! </h1>
+    </div>
+  );
+};
 
-export default HomePage
+export default HomePage;

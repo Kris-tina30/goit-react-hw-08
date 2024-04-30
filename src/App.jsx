@@ -9,19 +9,20 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 
 import Layout from './components/Layout/Layout';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from './redux/auth/operations';
 import { useEffect } from 'react';
 import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { selectIsRefreshing } from './redux/auth/selectors';
 
 function App() {
   const dispatch = useDispatch();
-
+  const isRefresging = useSelector(selectIsRefreshing);
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-
+  if (isRefresging) return <div>...loading</div>;
   return (
     <Layout>
       {/* <Suspense fallback={<Loader />}> */}

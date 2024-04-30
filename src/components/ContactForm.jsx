@@ -4,7 +4,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { addContact } from '../redux/contacts/operations';
 
-
 const MAX_CHAR_VALIDATION = 50;
 const MIN_CHAR_VALIDATION = 3;
 
@@ -44,7 +43,7 @@ function ContactForm() {
     <Formik
       initialValues={FORM_INITIAL_VALUES}
       validationSchema={contactSchema}
-      onSubmit={handleSubmit} 
+      onSubmit={handleSubmit}
     >
       <Form className={css.contactForm}>
         <div className={css.contactData}>
@@ -60,7 +59,7 @@ function ContactForm() {
           </label>
           <Field type="tel" name="number" />
         </div>
-        <button type="submit" className={css.buttonAdd}>
+        <button type="submit" className={css.buttonSub}>
           Add contact
         </button>
       </Form>

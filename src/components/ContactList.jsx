@@ -18,11 +18,12 @@ function ContactList() {
 
   return (
     <ul>
-      {visibleContacts.map(contact => (
-        <li key={contact.id}>
-          <Contact contacts={contact} onDeleteContact={onDeleteContact} />
-        </li>
-      ))}
+      {Array.isArray(visibleContacts) &&
+        visibleContacts.map(contact => (
+          <li key={contact.id}>
+            <Contact contacts={contact} onDeleteContact={onDeleteContact} />
+          </li>
+        ))}
     </ul>
   );
 }
