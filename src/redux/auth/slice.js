@@ -17,20 +17,21 @@ const slice = createSlice({
     builder
 
       .addCase(register.fulfilled, (state, action) => {
+        state.isLogedIn = true;
         state.user = action.payload.user;
         state.token = action.payload.token;
-        state.isLogedIn = true;
       })
       .addCase(login.fulfilled, (state, action) => {
+        state.isLogedIn = true;
         state.user = action.payload.user;
         state.token = action.payload.token;
-        state.isLogedIn = true;
       })
 
       .addCase(refreshUser.pending, state => {
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
+        state.isRefreshing = false;
         state.isLogedIn = true;
         state.user = action.payload;
       })
@@ -38,9 +39,9 @@ const slice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(logout.fulfilled, state => {
+        state.isLogedIn = false;
         state.user = { name: null, email: null };
         state.token = null;
-        state.isLogedIn = false;
       });
   },
 });
